@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ngnix-server-service
+spec:
+# Have access via NodeIP
+# curl 172.17.0.2:31515
+#  type: NodePort
+  selector:
+    component: ngnix-server
+  ports:
+  - port: 80
+    targetPort: 80
+#    nodePort: 31515
